@@ -8,10 +8,10 @@ router.get('/', function(req, res) {
 
 });
 
+router.get('/detail', function(req, res) {
+  res.render( path.join(__dirname, '../views/detail') )
 
-
-
-
+});
 
 
 
