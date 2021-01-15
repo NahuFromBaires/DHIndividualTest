@@ -6,7 +6,7 @@ module.exports =
 {
     traeNotas: function(req, res, next) 
         { 
-            db.sequelize.query("SELECT * FROM NOTAS WHERE still_alive='YES'") //QUERY
+            db.sequelize.query("SELECT * FROM NOTAS") //QUERY
             .then(function(resultados){
             res.render( 'index',{notas: resultados[0]} ) //Envia datos
             });
@@ -29,6 +29,22 @@ module.exports =
             .then(function(){res.redirect('/') //Redirige para recuperar datos de nuevo
             })
      
+        },
+    BorrarNota: function(req, res, next) 
+        {   
+            console.log('Toque sobre borrar nota');
+            
+            let idTabla = parseInt(req.body.borrar);
+
+
+            db.sequelize.query(              
+                "DELETE FROM NOTAS WHERE id = " + idTabla)
+                //QUERY
+                .then(function(){res.redirect('/') //Redirige para recuperar datos de nuevo
+                })
+
+            
+        
         }
 
 

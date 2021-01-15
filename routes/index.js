@@ -8,5 +8,6 @@ router.get('/detail', principalController.traeNotas);
 router.get('/detail/:id', principalController.Edita);
 
 router.post('/create', principalController.CreaNota);
+router.post('/delete', principalController.BorrarNota);
 
 module.exports = router;

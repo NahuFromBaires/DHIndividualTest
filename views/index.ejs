@@ -40,8 +40,8 @@
                         
                         <div class="edit" >
                             <a href="/detail/<%= notas[n].id %>"><i class="far fa-edit" ></i></a>
-                            <form action="">
-                                <button type="submit"><i class="far fa-trash-alt"></i></button>
+                            <form action="/delete" method="POST">
+                                <button type="submit" name="borrar" value="<%= notas[n].id %>"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </div>            
                 </div>
