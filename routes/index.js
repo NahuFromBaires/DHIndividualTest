@@ -13,6 +13,13 @@ router.get('/detail', function(req, res) {
 
 });
 
+let db = require('../database/db/models');
+router.get('/notas', function(req, res, next) {
+
+    db.sequelize.query('SELECT * FROM NOTAS')
+    .then(resultados => res.send(resultados[0]))
+    
+});
 
 
 module.exports = router;
