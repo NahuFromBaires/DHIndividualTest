@@ -4,10 +4,8 @@ const principalController = require('../controller/principalController');
 
 
 router.get('/', principalController.traeNotas);
-
-router.get('/detail', principalController.Edita);
-
-
+router.get('/detail', principalController.traeNotas);
+router.get('/detail/:id', principalController.Edita);
 
 
 module.exports = router;

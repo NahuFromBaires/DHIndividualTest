@@ -6,16 +6,20 @@ module.exports =
 {
     traeNotas: function(req, res, next) 
         { 
-            db.sequelize.query('SELECT * FROM NOTAS')
+            db.sequelize.query('SELECT * FROM NOTAS') //QUERY
             .then(function(resultados){
-            res.render( 'index',{notas: resultados[0]} ) 
+            res.render( 'index',{notas: resultados[0]} ) //Envia datos
             });
          },
     
     Edita: function(req, res, next) 
         {
-            console.log('Estoy en detail');
-            res.render( path.join(__dirname, '../views/detail') )
+            db.sequelize.query('SELECT * FROM NOTAS WHERE id =' + req.params.id) //QUERY
+            .then(function(resultados){
+            console.log(resultados[0]);
+            res.render('detail',{notasid: resultados[0]} ) //Envia datos
+            });
+            
           
         }
       

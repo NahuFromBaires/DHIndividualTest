@@ -38,8 +38,8 @@
                         <h2> <%= notas[n].title %> </h2>
                         <p> <%= notas[n].mensaje %> </p>
                         
-                        <div class="edit">
-                            <a href="#"><i class="far fa-edit"></i></a>
+                        <div class="edit" >
+                            <a href="/detail/<%= notas[n].id %>"><i class="far fa-edit" ></i></a>
                             <form action="">
                                 <button type="submit"><i class="far fa-trash-alt"></i></button>
                             </form>

@@ -11,6 +11,7 @@
 
     <header>
         <nav>
+
             <div class="brand-wrapper">
                 <div class="logo">
                     <img src="/images/logo.svg" alt="">
@@ -25,11 +26,11 @@
             <form action="">
                 <div>
                     <label for="">Título</label>
-                    <input type="text" name="title">
+                    <input type="text" name="title" value="<%= notasid[0].title %>">
                 </div>
                 <div>
                     <label for="message">Mensaje</label>
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10"><%= notasid[0].mensaje %></textarea>
                 </div>
                 <button type="submit">Editar</button>
             </form>
