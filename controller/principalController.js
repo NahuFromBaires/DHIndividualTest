@@ -21,14 +21,16 @@ module.exports =
             });
         },
     CreaNota: function(req, res, next) 
-        {
-            console.log('Toque sobre Create');
-            console.log(req.body.title + " " + req.body.mensaje)
-            res.redirect('/')
-            
-        },
+        {   
+            console.log('Toque sobre create');
+            db.sequelize.query(                
+            "INSERT INTO NOTAS (title, mensaje) VALUES('" + req.body.title + "','" + req.body.mensaje + "')")
+            //QUERY
+            .then(function(){res.redirect('/') //Redirige para recuperar datos de nuevo
+            })
+     
+        }
 
-    
-      
-}
+
+} // Fin module.exports
     

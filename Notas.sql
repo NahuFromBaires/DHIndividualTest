@@ -9,7 +9,7 @@ CREATE TABLE NOTAS (
 	id int auto_increment primary key,
     title varchar(50) NULL,
     mensaje varchar(8000) NULL,
-    created_at timestamp NULL,
+    created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp NULL,
     delated_at timestamp NULL,
     still_alive varchar(3) DEFAULT 'YES' NOT NULL    
