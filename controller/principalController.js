@@ -6,7 +6,7 @@ module.exports =
 {
     traeNotas: function(req, res, next) 
         { 
-            db.sequelize.query('SELECT * FROM NOTAS') //QUERY
+            db.sequelize.query("SELECT * FROM NOTAS WHERE still_alive='YES'") //QUERY
             .then(function(resultados){
             res.render( 'index',{notas: resultados[0]} ) //Envia datos
             });
@@ -19,9 +19,16 @@ module.exports =
             console.log(resultados[0]);
             res.render('detail',{notasid: resultados[0]} ) //Envia datos
             });
+        },
+    CreaNota: function(req, res, next) 
+        {
+            console.log('Toque sobre Create');
+            console.log(req.body.title + " " + req.body.mensaje)
+            res.redirect('/')
             
-          
-        }
+        },
+
+    
       
 }
     
