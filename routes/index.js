@@ -11,19 +11,22 @@ router.get('/', function(req, res, next) {
     .then(function(resultados){
         
        
-       req.body.notas = resultados[0];
-      console.log(req.body.notas);
+      
+      console.log('Estoy en index ' + Date.now);
+      console.log(resultados[0]);
+      res.render( 'index',{notas: resultados[0]}
+      
+      ) 
        
       
       } //cierra callback 
       
-      ) //Cierra then
+      ); //Cierra then
  
- 
-  res.render( path.join(__dirname, '../views/index') 
   
   
-  )
+  
+  
 
 });
 
